@@ -1,0 +1,1 @@
+O projeto hospital, tem como finalidade o cadastramento de pascientes, e nesses cadastros tinha informações como o médico encarregado das consultas, e valores pagos, pelos pascientes, situação do quadro médico, e horarios da consultas. 
