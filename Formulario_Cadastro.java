@@ -6,7 +6,7 @@
 package Interface;
 
 import Classes.Consulta;
-import Classes.Especialidade;
+import Classes.Formação;
 import Classes.Medico;
 import Classes.Paciente;
 import Classes.Prontuario;
@@ -17,12 +17,12 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Marcos
  */
-public class Formulario_Cadastro extends javax.swing.JFrame {
+public class _Cadastro extends javax.swing.JFrame {
 
     /**
      * Creates new form NovoJFrame
      */
-    public Formulario_Cadastro() {
+    public Cadastro() {
         initComponents();
     }
 
@@ -258,7 +258,7 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "CPF", "Sexo"
+                "CPF", "Nome",  "Sexo"
             }
         ));
         jScrollPane1.setViewportView(jPaciente);
@@ -268,8 +268,8 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID", "Nome", "CRM", "Sala", "Especialidade", "Consulta"
-            }
+               "CPF" , "Nome", "CRM", "Sala", "Especialidade", "Consulta"
+                
         ));
         jScrollPane2.setViewportView(jMedico);
 
@@ -278,7 +278,7 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "ID Prontuario", "ID Paciente", "Convenio", "Status", "Medico", "Paciente", "CPF"
+                " Prontuario", "CF Paciente", "Convenio", "Status", "Medico", "Paciente", "CPF"
             }
         ));
         jScrollPane3.setViewportView(jProntuario);
@@ -477,7 +477,7 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
         getContentPane().add(jLabel11, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel12.setText("ID Paciente:");
+        jLabel12.setText("CPF Paciente:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
@@ -511,6 +511,7 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(3, 140, 0, 0);
         getContentPane().add(txtConvenio, gridBagConstraints);
+        
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel14.setText("Convenio:");
@@ -521,6 +522,23 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 140, 0, 0);
         getContentPane().add(jLabel14, gridBagConstraints);
+
+
+        txtConvenio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtValorrutoActionPerformed(evt);
+
+
+        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+        jLabel15.setText("Valor bruto:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 80;
+        gridBagConstraints.gridy = 17;
+        gridBagConstraints.gridwidth = 47;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 140, 0, 0);
+        getContentPane().add(jLabel14, gridBagConstraints);
+
 
         txtCRM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -628,10 +646,10 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
 
         Object[] dados = {txtIDpaciente.getText(), txtNome.getText(), txtCPF.getText(), txtCRM.getText()};
 
-        Object[] Paciente1 = {Paciente.idPaciente[0], Paciente.nome[0], Paciente.cpf[0], Paciente.Sexo[1]};
-        Object[] Paciente2 = {Paciente.idPaciente[1], Paciente.nome[1], Paciente.cpf[1], Paciente.Sexo[0]};
-        Object[] Paciente3 = {Paciente.idPaciente[2], Paciente.nome[2], Paciente.cpf[2], Paciente.Sexo[1]};
-        Object[] Paciente4 = {Paciente.idPaciente[3], Paciente.nome[3], Paciente.cpf[3], Paciente.Sexo[0]};
+        Object[] Paciente1 = {Paciente.cpfPaciente[0], Paciente.nome[0], Paciente.cpf[0], Paciente.Sexo[1]};
+        Object[] Paciente2 = {Paciente.cpfPaciente[1], Paciente.nome[1], Paciente.cpf[1], Paciente.Sexo[0]};
+        Object[] Paciente3 = {Paciente.cpfPaciente[2], Paciente.nome[2], Paciente.cpf[2], Paciente.Sexo[1]};
+        Object[] Paciente4 = {Paciente.cpfPaciente[3], Paciente.nome[3], Paciente.cpf[3], Paciente.Sexo[0]};
         dtmCadastro.addRow(Paciente1);
         dtmCadastro.addRow(Paciente2);
         dtmCadastro.addRow(Paciente3);
@@ -744,10 +762,10 @@ public class Formulario_Cadastro extends javax.swing.JFrame {
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         DefaultTableModel dtmMedico = (DefaultTableModel) jMedico.getModel();
 
-        Object[] medico = {Medico.idMedico[0], Medico.nome[0], Medico.crm[0], Medico.sala[0], Especialidade.descricao[0]};
-        Object[] medico1 = {Medico.idMedico[1], Medico.nome[1], Medico.crm[1], Medico.sala[1], Especialidade.descricao[1]};
-        Object[] medico2 = {Medico.idMedico[2], Medico.nome[2], Medico.crm[2], Medico.sala[2], Especialidade.descricao[2]};
-        Object[] medico3 = {Medico.idMedico[3], Medico.nome[3], Medico.crm[3], Medico.sala[3], Especialidade.descricao[3]};
+        Object[] medico = {Medico.idMedico[0], Medico.nome[0], Medico.crm[0], Medico.sala[0], Formação.descricao[0]};
+        Object[] medico1 = {Medico.idMedico[1], Medico.nome[1], Medico.crm[1], Medico.sala[1], Formação.descricao[1]};
+        Object[] medico2 = {Medico.idMedico[2], Medico.nome[2], Medico.crm[2], Medico.sala[2], Formação.descricao[2]};
+        Object[] medico3 = {Medico.idMedico[3], Medico.nome[3], Medico.crm[3], Medico.sala[3], Formação.descricao[3]};
 
         dtmMedico.addRow(medico);
         dtmMedico.addRow(medico1);
