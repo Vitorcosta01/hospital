@@ -258,7 +258,7 @@ public class _Cadastro extends javax.swing.JFrame {
 
             },
             new String [] {
-                "CPF", "Nome",  "Sexo"
+                "CPF", "Nome",  "Sexo", "Idade"
             }
         ));
         jScrollPane1.setViewportView(jPaciente);
@@ -268,7 +268,7 @@ public class _Cadastro extends javax.swing.JFrame {
 
             },
             new String [] {
-               "CPF" , "Nome", "CRM", "Sala", "Especialidade", "Consulta"
+               "CPF" , "Nome", "CRM", "Sala", "Especialidade", "Consulta", "Idade"
                 
         ));
         jScrollPane2.setViewportView(jMedico);
@@ -278,7 +278,7 @@ public class _Cadastro extends javax.swing.JFrame {
 
             },
             new String [] {
-                " Prontuario", "CF Paciente", "Convenio", "Status", "Medico", "Paciente", "CPF"
+                " Prontuario", "CF Paciente", "Formas de pagamento", "Status", "Medico", "Paciente", "CPF"
             }
         ));
         jScrollPane3.setViewportView(jProntuario);
@@ -394,7 +394,7 @@ public class _Cadastro extends javax.swing.JFrame {
         getContentPane().add(jLabel9, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel10.setText("Especialidade:");
+        jLabel10.setText("Formação:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 64;
         gridBagConstraints.gridy = 21;
@@ -514,7 +514,7 @@ public class _Cadastro extends javax.swing.JFrame {
         
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel14.setText("Convenio:");
+        jLabel14.setText("Forma de pagamento:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 80;
         gridBagConstraints.gridy = 17;
@@ -526,18 +526,94 @@ public class _Cadastro extends javax.swing.JFrame {
 
         txtConvenio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtValorrutoActionPerformed(evt);
+                txtConvenioActionPerformed(evt);
+
+                jButton7.setText("Cadastrar");
+                jButton7.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        jButton7ActionPerformed(evt);
+                    }
+                });
+                gridBagConstraints = new java.awt.GridBagConstraints();
+                gridBagConstraints.gridx = 24;
+                gridBagConstraints.gridy = 21;
+                gridBagConstraints.gridwidth = 12;
+                gridBagConstraints.gridheight = 2;
+                gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+                gridBagConstraints.insets = new java.awt.Insets(5, 3, 0, 0);
+                getContentPane().add(jButton7, gridBagConstraints);
+        
+                jButton8.setText("Consultar");
+                jButton8.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        jButton8ActionPerformed(evt);
+                    }
+                });
+                gridBagConstraints = new java.awt.GridBagConstraints();
+                gridBagConstraints.gridx = 70;
+                gridBagConstraints.gridy = 25;
+                gridBagConstraints.gridwidth = 8;
+                gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+                gridBagConstraints.insets = new java.awt.Insets(8, 1, 0, 0);
+                getContentPane().add(jButton8, gridBagConstraints);
+        
+                buttonGroup1.add(Buttonf);
+                Buttonf.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                Buttonf.setText("Convenio");
+                Buttonf.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        ButtonfActionPerformed(evt);
+                    }
+                });
+                gridBagConstraints = new java.awt.GridBagConstraints();
+                gridBagConstraints.gridx = 14;
+                gridBagConstraints.gridy = 18;
+                gridBagConstraints.gridwidth = 11;
+                gridBagConstraints.gridheight = 3;
+                gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+                gridBagConstraints.insets = new java.awt.Insets(3, 25, 0, 0);
+                getContentPane().add(Buttonf, gridBagConstraints);
+        
+                buttonGroup1.add(Buttonm);
+                Buttonm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+                Buttonm.setText("Cartão");
+                Buttonm.addActionListener(new java.awt.event.ActionListener() {
+                    public void actionPerformed(java.awt.event.ActionEvent evt) {
+                        ButtonmActionPerformed(evt);
+                    }
 
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel15.setText("Valor bruto:");
+                }
+            });
+            gridBagConstraints = new java.awt.GridBagConstraints();
+            gridBagConstraints.gridx = 14;
+            gridBagConstraints.gridy = 18;
+            gridBagConstraints.gridwidth = 11;
+            gridBagConstraints.gridheight = 3;
+            gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+            gridBagConstraints.insets = new java.awt.Insets(3, 25, 0, 0);
+            getContentPane().add(Buttonf, gridBagConstraints);
+      
+            buttonGroup1.add(Buttonm);
+            Buttonm.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
+            Buttonm.setText("Dinheiro");
+            Buttonm.addActionListener(new java.awt.event.ActionListener() {
+                public void actionPerformed(java.awt.event.ActionEvent evt) {
+                    ButtonmActionPerformed(evt);
+                }
+
+
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 80;
-        gridBagConstraints.gridy = 17;
-        gridBagConstraints.gridwidth = 47;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridwidth = 195;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 297;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 140, 0, 0);
-        getContentPane().add(jLabel14, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(3, 140, 0, 0);
+        getContentPane().add(txtConvenio, gridBagConstraints);
 
 
         txtCRM.addActionListener(new java.awt.event.ActionListener() {
